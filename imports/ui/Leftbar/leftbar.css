@@ -1,0 +1,26 @@
+.leftbar-wrapper {
+    width: 30%;
+    height: 100vh;
+    border-right: 1px solid #95959599;
+    background-color: #fff;
+    padding: 20px 12px;
+}
+.lb-options {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.bn-1264 {
+    display: none;
+}
+@media only screen and (max-width: 1264px) {
+    .leftbar-wrapper {
+        width: fit-content;
+    }
+    .n-1264 {
+        display: none;
+    }
+    .bn-1264 {
+        display: block;
+    }
+}
