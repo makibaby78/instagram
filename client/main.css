@@ -6,6 +6,9 @@
 body{
   background-color: #fafafa;
 }
+.border-standard{
+  border: 1px solid #95959599;
+}
 svg.icon-size {
   font-size: 50px;
   padding: 13px;
