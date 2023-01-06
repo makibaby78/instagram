@@ -43,6 +43,7 @@ form.login-form {
     font-weight: 600;
     color: #0097f7;
     text-decoration: none;
+    cursor: pointer;
 }
 .h-reg{
     text-align: center;

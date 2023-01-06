@@ -1,34 +1,49 @@
 import React from 'react'
-import Leftbar from './Leftbar/Leftbar'
 import Login from './Login/Login'
 import Register from './Register/Register';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+import { UserCollection } from '../api/userinfo';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './Home/Home';
+import Messages from './Messages/Messages';
 
 function App() {
   const user = useTracker(() => Meteor.user());
+  
+  const allUsers = useTracker(() => {
+    Meteor.subscribe('allUsers');
+      return UserCollection.find().fetch();
+  });
 
   return (
-    <div className='app-wrapper container'>
-    <Router>
-      {user ? 
-        (
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-          ) : (
-          <Routes>
-            <Route path='/register' element={<Register /> } />
-            <Route path='/login' element={<Login /> } />
-            <Route path='/' element={<Login /> } />
-            <Route path='*' element={<Login /> } />
-          </Routes>
-        )
-      }
-    </Router>
-    </div>
+      <div className='app-wrapper container'>
+        <Router>
+          {user ? 
+            (
+              <>
+              {allUsers.filter(lists => lists.username===user.username).map((lists)=>{
+                return(
+                    <div key={lists._id}>
+                      <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/messages" element={<Messages username={`${lists.username}`}/>} />
+                      </Routes>
+                    </div>
+                  )
+              })}
+              </>
+            ) : (
+              <Routes>
+                <Route path='/register' element={<Register /> } />
+                <Route path='/login' element={<Login /> } />
+                <Route path='/' element={<Login /> } />
+                <Route path='*' element={<Login /> } />
+              </Routes>
+            )
+          }
+        </Router>
+      </div>
   )
 }
 

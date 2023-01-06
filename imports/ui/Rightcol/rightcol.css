@@ -1,0 +1,34 @@
+.profile-image{
+    position: relative;
+    overflow: hidden;
+    max-width: 60px;
+}
+.profile-image img {
+    object-fit: cover;
+    object-position: center;
+    height: 50px;
+    border-radius: 50%;
+    width: 50px;
+    border: 2px solid #ededed;
+}
+.profile-information {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pi-i-un {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+.pi-un {
+    display: flex;
+    flex-direction: column;
+}
+.rightcol-wrapper{
+    width: 40%;
+    padding: 40px;
+}
+.pi-name{
+    color: #a3a3a3;
+}

@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
-import { LinksCollection } from '/imports/api/links';
+import { LinksCollection } from '../imports/api/links';
+import { UserCollection } from '../imports/api/userinfo';
 
 async function insertLink({ title, url }) {
   await LinksCollection.insertAsync({ title, url, createdAt: new Date() });
@@ -8,6 +9,10 @@ async function insertLink({ title, url }) {
 
 Meteor.publish('links', ()=>{
   return LinksCollection.find();
+})
+
+Meteor.publish('allUsers', ()=>{
+  return UserCollection.find();
 })
 
 Meteor.startup(async () => {
