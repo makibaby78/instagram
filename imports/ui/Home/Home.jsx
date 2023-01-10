@@ -25,7 +25,7 @@ function Home() {
           <div className='home-wrapper' key={lists._id}>
             <Leftbar/>
             <div className='content-wrapper'></div>
-            <Rightcol url={lists.profileurl} name={`${lists.firstname} ${lists.lastname}`} username={`${lists.username}`}/>
+            {/* <Rightcol url={lists.profileurl} name={`${lists.firstname} ${lists.lastname}`} username={`${lists.username}`}/> */}
           </div>
         )
       })}

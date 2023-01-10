@@ -21,12 +21,10 @@ function App() {
         <Router>
           {user ? 
             (
-              <>
-                      <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/messages" element={<Messages />} />
-                      </Routes>
-              </>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/messages" element={<Messages />} />
+              </Routes>
             ) : (
               <Routes>
                 <Route path='/register' element={<Register /> } />
