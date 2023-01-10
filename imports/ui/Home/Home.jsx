@@ -13,9 +13,6 @@ function Home() {
     Meteor.subscribe('allUsers');
       return UserCollection.find().fetch();
   });
-  // console.log(user._id);
-  // console.log(user.username);
-  
 
   useEffect(() => {
     document.title = 'Instagram';

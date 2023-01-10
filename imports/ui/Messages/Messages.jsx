@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import Leftbar from '../Leftbar/Leftbar'
 import './messages.css'
 
-function Messages(props) {
+function Messages() {
+  
   useEffect(() => {
     document.title = 'Inbox • Chats';
   }, []);
+
   return (
     <div className='home-wrapper'>
         <Leftbar />
@@ -13,7 +15,7 @@ function Messages(props) {
             <div className='messages-wrapper'>
                 <div className='messages-list'>
                   <div className='ml-username'>
-                    <span>{props.username}</span>
+                    <span>Owner</span>
                   </div>
                   <div className='ml-options'>
                     <div className='mlo mlo-primary'>

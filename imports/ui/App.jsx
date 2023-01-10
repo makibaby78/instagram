@@ -22,16 +22,10 @@ function App() {
           {user ? 
             (
               <>
-              {allUsers.filter(lists => lists.username===user.username).map((lists)=>{
-                return(
-                    <div key={lists._id}>
                       <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/messages" element={<Messages username={`${lists.username}`}/>} />
+                        <Route path="/messages" element={<Messages />} />
                       </Routes>
-                    </div>
-                  )
-              })}
               </>
             ) : (
               <Routes>
