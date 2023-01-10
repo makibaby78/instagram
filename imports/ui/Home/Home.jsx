@@ -19,17 +19,11 @@ function Home() {
   }, []);
   
   return (
-    <>
-      {allUsers.filter(lists => lists.username===user.username).map((lists)=>{
-        return(
-          <div className='home-wrapper' key={lists._id}>
+          <div className='home-wrapper'>
             <Leftbar/>
             <div className='content-wrapper'></div>
             {/* <Rightcol url={lists.profileurl} name={`${lists.firstname} ${lists.lastname}`} username={`${lists.username}`}/> */}
           </div>
-        )
-      })}
-    </>
   )
 }
 
