@@ -22,7 +22,10 @@ function Home() {
           <div className='home-wrapper'>
             <Leftbar/>
             <div className='content-wrapper'></div>
-            {/* <Rightcol url={lists.profileurl} name={`${lists.firstname} ${lists.lastname}`} username={`${lists.username}`}/> */}
+            {allUsers.filter(lists=>lists.username===user.username).map((lists)=>{
+              return(
+                <Rightcol key={lists._id} url={lists.profileurl} name={`${lists.firstname} ${lists.lastname}`} username={`${lists.username}`}/> 
+            )})}
           </div>
   )
 }
